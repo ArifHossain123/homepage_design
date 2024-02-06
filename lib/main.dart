@@ -13,6 +13,15 @@ class HomepageView extends StatefulWidget {
 }
 
 class _HomepageViewState extends State<HomepageView> {
+  final List<String> _listItem = [
+    'assets/one.jpg',
+    'assets/two.jpg',
+    'assets/three.jpg',
+    'assets/four.jpg',
+    'assets/five.jpg',
+    'assets/six.jpg',
+    'assets/three.jpg',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +75,7 @@ class _HomepageViewState extends State<HomepageView> {
                     ),
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       const Text(
                         "LifeStyle Sale",
@@ -80,11 +89,36 @@ class _HomepageViewState extends State<HomepageView> {
                       ),
                       Container(
                         height: 50,
-                        margin: const EdgeInsets.symmetric(horizontal:40 ),
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                        ),
                         decoration: const BoxDecoration(
                           color: Colors.white,
                         ),
+                        child: const Center(
+                          child: Text(
+                            "Shop Now ",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      GridView.count(
+                        crossAxisCount: 2,
+                        padding: const EdgeInsets.all(20),
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
+                        children: _listItem
+                            .map((item) => const Card(
+                                  child: Center(),
+                                ))
+                            .toList(),
+                      )
                     ],
                   ),
                 ),
