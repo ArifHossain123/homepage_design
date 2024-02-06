@@ -20,15 +20,28 @@ class _HomepageViewState extends State<HomepageView> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(Icons.menu),
+        leading: const Icon(Icons.menu),
+        title: const Text("Home"),
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(),
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              width: 28,
+              height: 28,
+              decoration: BoxDecoration(
+                color: Colors.grey[800],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child:const Center(child:
+                  Text("0"),
+                ) 
+            ),
           ),
         ],
       ),
-      body: SafeArea(child: Container()),
+      body: SafeArea(
+        child: Container(),
+      ),
     );
   }
 }
