@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main()=> 
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: HomepageView(),
-  ));
-  class HomepageView extends StatefulWidget {
+void main() => runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomepageView(),
+    ));
+
+class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
 
   @override
@@ -15,16 +15,20 @@ void main()=>
 class _HomepageViewState extends State<HomepageView> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.grey[600],
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 143, 137, 137),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Icon(Icons.menu),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Container(),
+          ),
+        ],
       ),
       body: SafeArea(child: Container()),
     );
   }
 }
-
-
-
-
