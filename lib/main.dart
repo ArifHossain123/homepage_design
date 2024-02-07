@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomepageView(),
-    ));
+void main() => runApp(
+      const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomepageView(),
+      ),
+    );
 
 class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
@@ -134,16 +136,19 @@ class _HomepageViewState extends State<HomepageView> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            child:Transform.translate(offset:const Offset(50, -50),
-                            child: Container(
-                              
-                              margin:const EdgeInsets.symmetric(horizontal: 70, vertical: 65),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color.fromARGB(255, 255, 255, 255),
+                            child: Transform.translate(
+                              offset: const Offset(50, -50),
+                              child: Container(
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 70, vertical: 65),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color:
+                                      const Color.fromARGB(255, 157, 156, 156),
+                                ),
+                                child: const Icon(Icons.bookmark_border),
                               ),
-                            child: const Icon(Icons.bookmark_border),
-                            ),),
+                            ),
                           ),
                         ),
                       )
