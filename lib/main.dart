@@ -49,7 +49,7 @@ class _HomepageViewState extends State<HomepageView> {
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Container(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
@@ -108,19 +108,30 @@ class _HomepageViewState extends State<HomepageView> {
                       const SizedBox(
                         height: 30,
                       ),
-                      GridView.count(
-                        crossAxisCount: 2,
-                        padding: const EdgeInsets.all(20),
-                        crossAxisSpacing: 20,
-                        mainAxisSpacing: 20,
-                        children: _listItem
-                            .map((item) => const Card(
-                                  child: Center(),
-                                ))
-                            .toList(),
-                      )
                     ],
                   ),
+                ),
+              ),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  padding: const EdgeInsets.all(20),
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                  children: _listItem
+                      .map(
+                        (item) => Card(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(item),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
             ],
