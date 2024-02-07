@@ -112,22 +112,38 @@ class _HomepageViewState extends State<HomepageView> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: const EdgeInsets.all(20),
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
+                  // padding: const EdgeInsets.all(10),
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
                   children: _listItem
                       .map(
                         (item) => Card(
+                          color: Colors.transparent,
+                          elevation: 0,
                           child: Container(
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 image: AssetImage(item),
                                 fit: BoxFit.cover,
                               ),
                             ),
+                            child:Transform.translate(offset:const Offset(50, -50),
+                            child: Container(
+                              
+                              margin:const EdgeInsets.symmetric(horizontal: 70, vertical: 65),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            child: const Icon(Icons.bookmark_border),
+                            ),),
                           ),
                         ),
                       )
